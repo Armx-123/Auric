@@ -290,5 +290,14 @@ async def senddm(interaction: discord.Interaction, user: discord.User, title: st
         await interaction.response.send_message("I cannot send a DM to this user.", ephemeral=True)
     except Exception as e:
         await interaction.response.send_message(f"An error occurred: {e}", ephemeral=True)
-
+        
+@bot.tree.command(name="countmessages", description="Counts the number of messages in the current channel")
+async def count_messages(interaction: discord.Interaction):
+    channel = interaction.channel
+    message_count = 0
+    
+    async for _ in channel.history(limit=None):
+        message_count += 1
+    
+    await interaction.response.send_message(f'There are {message_count} messages in this channel.', ephemeral=True)
 bot.run(os.environ['TOKEN'])
