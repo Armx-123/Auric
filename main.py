@@ -7,7 +7,7 @@ import aiohttp
 import time
 from better_profanity import profanity
 import json
-
+import os
 bot = commands.Bot(command_prefix="/", intents = discord.Intents.all())
 
 
@@ -291,4 +291,4 @@ async def senddm(interaction: discord.Interaction, user: discord.User, title: st
     except Exception as e:
         await interaction.response.send_message(f"An error occurred: {e}", ephemeral=True)
 
-bot.run('MTA3NjQ2MzQ1NTEzOTI3NDgwMg.GBNdPM.0qiMv85P4jk3BDLiTUUZt9rCXu3V5ArXaYhh2U')
+bot.run(os.environ['TOKEN'])
