@@ -276,7 +276,7 @@ async def anti_raid(self, member):
 async def senddm(interaction: discord.Interaction, user: discord.User, title: str, description: str):
     try:
         embed = discord.Embed(title=title, description=description, color=0xf5c310)
-        embed.set_author(name="RealDrewData", url="https://twitter.com/RealDrewData", icon_url="https://pbs.twimg.com/profile_images/1327036716226646017/ZuaMDdtm_400x400.jpg")
+        embed.set_author(name=" Sent by", url="https://twitter.com/RealDrewData", icon_url="https://pbs.twimg.com/profile_images/1327036716226646017/ZuaMDdtm_400x400.jpg")
         embed.set_thumbnail(url="https://i.imgur.com/axLm3p6.jpeg")
 
         embed.add_field(name="Field 1 Title", value="This is the value for field 1. This is NOT an inline field.", inline=False)
