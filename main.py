@@ -293,11 +293,12 @@ async def senddm(interaction: discord.Interaction, user: discord.User, title: st
         
 @bot.tree.command(name="countmessages", description="Counts the number of messages in the current channel")
 async def count_messages(interaction: discord.Interaction):
+    await interaction.response.defer()
     channel = interaction.channel
     message_count = 0
     
     async for _ in channel.history(limit=None):
         message_count += 1
     
-    await interaction.response.send_message(f'There are {message_count} messages in this channel.', ephemeral=True)
+    await interaction.followup.send(f'There are {message_count} messages in this channel.', ephemeral=True)
 bot.run(os.environ['TOKEN'])
