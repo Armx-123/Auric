@@ -1,4 +1,4 @@
-name: Bot
+name: keep_alive
 
 on:
   schedule:
