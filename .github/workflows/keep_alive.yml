@@ -11,6 +11,7 @@ env:
   TOKEN: ${{ secrets.TOKEN }}
   GMAIL: ${{ secrets.GMAIL }}
   PASS: ${{ secrets.PASS }}
+  GIT: ${{ secrets.GIT }}
 
 jobs:
   Run_Bot:
