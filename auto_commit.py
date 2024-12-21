@@ -1,7 +1,7 @@
 from github import Github
 import os
 # Personal Access Token from GitHub
-ACCESS_TOKEN = os.get_env('GIT')
+ACCESS_TOKEN = os.environ['GIT']
 
 # Repository details
 REPO_NAME = "Armx-123/Armx-123"  # Format: username/repo
