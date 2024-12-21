@@ -4,9 +4,9 @@ import os
 ACCESS_TOKEN = os.environ['GIT']
 
 # Repository details
-REPO_NAME = "Armx-123/Armx-123"  # Format: username/repo
+REPO_NAME = "Armx-123/Auric"  # Format: username/repo
 FILE_PATH = "file.txt"  # Path in the repo
-LOCAL_FILE = "Data/title.txt"  # Local file to upload
+LOCAL_FILE = "title.txt"  # Local file to upload
 COMMIT_MESSAGE = "Add a new text file"
 
 # Authenticate to GitHub
