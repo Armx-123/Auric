@@ -1,5 +1,6 @@
 import random
 import discord
+from datetime import datetime
 from discord.ext import commands
 from discord.ui import View , Button
 import requests
@@ -32,6 +33,19 @@ async def hello(interaction: discord.Interaction,user: str):
     ephemeral=True
     await interaction.response.send_message(f""+user+" "+json_data["insult"],ephemeral=ephemeral)
     
+@bot.tree.command(name="counttoday", description="Counts the number of messages sent today in this channel")
+async def counttoday(interaction: discord.Interaction):
+    await interaction.response.defer()
+    
+    today = datetime.utcnow().date()
+    count = 0
+    
+    async for message in interaction.channel.history(limit=None):
+        if message.created_at.date() == today:
+            count += 1
+    
+    await interaction.followup.send(f"Messages sent today in this channel: {count}")
+
 
 @bot.tree.command(name="roll",description="This Command rolls a dice !")
 async def roll(interaction: discord.Interaction):
